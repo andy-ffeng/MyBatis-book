@@ -3,11 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
     <settings>
+        <!--logImpl 属性配置指定使用LOG4J输出日志 -->
         <setting name="logImpl" value="LOG4J"/>
     </settings>
     
      <typeAliases>
+         <!-- 配置一个包路径：通常在Mapper文件中使用一个类时，需要使用类的全限定名称，配置包名后可直接使用包下类，不在需要使用类的全限定名 -->
         <package name="tk.mybatis.simple.model"/>
     </typeAliases>
 
@@ -18,9 +21,9 @@
             </transactionManager>
             <dataSource type="UNPOOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://192.168.16.137:3306/mybatis"/>
+                <property name="url" value="jdbc:mysql://10.10.10.241:3306/mybatis_book"/>
                 <property name="username" value="root"/>
-                <property name="password" value=""/>
+                <property name="password" value="123456"/>
             </dataSource>
         </environment>
     </environments>
